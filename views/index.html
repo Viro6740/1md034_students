@@ -1,9 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>DELI-VERY</title>
-    </head>
-    <body>
-        <h1>Hello World!!!</h1>
-    </body>
+  <head>
+    <title>BurgerOnline</title>
+    <meta charset="utf-8"/>
+  </head>
+  <body>
+    <main>
+      <h1>Välkommen till BurgerOnline</h1>
+      <section>
+        
+        <h3>Välj Burgare</h3>
+        <p>Här kan du se och välja vilken burgare du vill ha </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Eld Burgaren</th>           
+              <th>Kalkon Burgaren</th>
+              <th>Burgare med Flair</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <img src="https://www.buffalowildwings.com/globalassets/menuitems/10210007-screamin--nacho-burger.png" alt="FireBurger" title = "Eld Burgaren" height = "250">
+                <ul>
+                  <li>En het burgare med 500 gram nötkött.</li>
+                  <li>Innehåller gluten och laktos.</li>
+                </ul>
+              </td>
+              <td>
+                <img src="http://www.dunkinindia.com/wp-content/uploads/2017/08/445x327-Lucy-Burger-1.png" alt="TurkeyBurger" title = "Kalkon Burgaren" height = "250">
+                <ul>
+                  <li>En kalkon burgare med 500 gram kalkon.</li>
+                  <li>Innehåller gluten och laktos.</li>
+                </ul>
+              </td>
+              <td>
+                <img src="https://cdn.shopify.com/s/files/1/0972/7116/products/sour-mini-burger-gummi_5364911c-88be-4531-a9fa-a4afd018dc96.png?v=1459348858" alt="FlairBurger" title = "Flair Burgaren" height = "250">
+                
+                <ul>
+                  <li>En rolig burgare med 500 gram socker.</li>
+                  <li>Vegansk.</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+          
+        </table>
+      </section>
+      <section id="contact">        
+        <h3>Kund Information</h3>
+        <p>Ange din leverans information</p>
+        <form>
+          <p>
+            <label for="fullname">Full Name</label><br>
+            <input type="text" id="fullname" name="fn" required="required" placeholder="För- och Efternamn">
+          </p>
+          <p>            
+            <label for="mail">Email</label><br>
+            <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
+          </p>
+          <p>            
+            <label for="street">Gatuadress</label><br>
+            <input type="text" id="street" name="sn" required="required" placeholder="Gatunamn">
+          </p>
+          <p>            
+            <label for="housenumber">Hus Nummer</label><br>
+            <input type="text" id="housenumber" name="hn" required="required" placeholder="Hus Nummer"><br>
+          </p>
+          <p>
+            <label for="payment">Betalmedel</label><br>
+            <select id="payment" name="pmnt">
+              <option selected="selected">På notan</option>
+              <option>Check</option>
+              <option>Kreditkort</option>
+              <option>Kontant</option>
+              <option>Debitkort</option>
+            </select>
+          </p>
+          <p>
+            <input type="radio" name="gender" value="male"> Man<br>
+            <input type="radio" name="gender" value="female"> Kvinna<br>
+            <input type="radio" name="gender" value="other" checked="checked"> Vill ej ange
+          </p>
+        </form>        
+          <button type="submit"><img src="https://cdn3.iconfinder.com/data/icons/food-and-drink-55/50/burger-13-2-512.png" height=20> Skicka</button>
+      </section>
+    </main>
+    <footer>
+      <p>Matglädje AB 2018 :)</p>
+    </footer>
+  </body>
 </html>
