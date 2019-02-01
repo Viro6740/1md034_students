@@ -3,55 +3,56 @@
   <head>
     <title>BurgerOnline</title>
     <meta charset="utf-8"/>
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
     <main>
-      <h1>Välkommen till BurgerOnline</h1>
-      <section>
-        
-        <h3>Välj Burgare</h3>
-        <p>Här kan du se och välja vilken burgare du vill ha </p>
-        <table>
-          <thead>
-            <tr>
-              <th>Eld Burgaren</th>           
-              <th>Kalkon Burgaren</th>
-              <th>Burgare med Flair</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <img src="https://www.buffalowildwings.com/globalassets/menuitems/10210007-screamin--nacho-burger.png" alt="FireBurger" title = "Eld Burgaren" height = "250">
-                <ul>
-                  <li>En het burgare med 500 gram nötkött.</li>
-                  <li>Innehåller gluten och laktos.</li>
-                </ul>
-              </td>
-              <td>
-                <img src="http://www.dunkinindia.com/wp-content/uploads/2017/08/445x327-Lucy-Burger-1.png" alt="TurkeyBurger" title = "Kalkon Burgaren" height = "250">
-                <ul>
-                  <li>En kalkon burgare med 500 gram kalkon.</li>
-                  <li>Innehåller gluten och laktos.</li>
-                </ul>
-              </td>
-              <td>
-                <img src="https://cdn.shopify.com/s/files/1/0972/7116/products/sour-mini-burger-gummi_5364911c-88be-4531-a9fa-a4afd018dc96.png?v=1459348858" alt="FlairBurger" title = "Flair Burgaren" height = "250">
-                
-                <ul>
-                  <li>En rolig burgare med 500 gram socker.</li>
-                  <li>Vegansk.</li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
+      <div>
+        <img id="imgforheader" class=header src="img/burgerbar.jpg" alt="BurgerOnline" title = "BurgerOnline">
+      </div>
+      <h1 id="htitle" class=header>Välkommen till BurgerOnline</h1>
+      <section id="burgers">        
+        <div class=wrapper>
+          <div class=boxinfo>
+        <h3 class=b_info>Välj Burgare</h3>
+        <p class=b_info>Här kan du se och välja vilken burgare du vill ha </p>
+        </div>
+          <div class="box a">
+            <h2 class=boxtitle>Eld Burgaren</h2>
+            
+            <img src="img/fireburger.png" alt="FireBurger" title = "Eld Burgaren" height = "250" width = "400">
+            <ul>
+            <li>En het burgare med 500 gram nötkött.</li>
+            <li class=diet>Innehåller gluten och laktos.</li>
+            </ul>
+          </div>
           
-        </table>
+          <div class="box b">
+            <h2 class=boxtitle>Kalkon Burgaren</h2>            
+            <img src="img/turkeyburger.png" alt="TurkeyBurger" title = "Kalkon Burgaren" height = "250" width = "400">
+            <ul>
+          <li>En kalkon burgare med 500 gram kalkon.</li>
+          <li class=diet>Innehåller gluten och laktos.</li>
+          </ul>
+          </div>
+
+          <div class="box c">
+          <h2 class=boxtitle>Burgare med Flair</h2>                
+          <img src="img/candyburger.png" alt="FlairBurger" title = "Flair Burgaren" height = "250" width = "400">          
+          <ul>
+          <li>En rolig burgare med 500 gram socker.</li>
+          <li class=diet>Vegansk.</li>
+          </ul>
+          </div>
+          
+        </div>
       </section>
+      
       <section id="contact">        
-        <h3>Kund Information</h3>
-        <p>Ange din leverans information</p>
-        <form>
+        <h3 class=contact>Kund Information</h3>
+        <p class=contact>Ange din leverans information</p>
+        <form class=contact>
           <p>
             <label for="fullname">Full Name</label><br>
             <input type="text" id="fullname" name="fn" required="required" placeholder="För- och Efternamn">
@@ -84,8 +85,9 @@
             <input type="radio" name="gender" value="other" checked="checked"> Vill ej ange
           </p>
         </form>        
-          <button type="submit"><img src="https://cdn3.iconfinder.com/data/icons/food-and-drink-55/50/burger-13-2-512.png" height=20> Skicka</button>
+        <button type="submit"><img src="https://cdn3.iconfinder.com/data/icons/food-and-drink-55/50/burger-13-2-512.png" height=20> Skicka</button>
       </section>
+      
     </main>
     <footer>
       <p>Matglädje AB 2018 :)</p>

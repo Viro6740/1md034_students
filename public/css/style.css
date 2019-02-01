@@ -1,0 +1,92 @@
+body {
+    font-family: sans-serif;
+    font-size: 12pt;
+
+}
+
+.diet {
+    font-weight: bold;
+}
+
+#burgers {
+    color: #FFFFFF;    
+    background-color: #000000;
+    border: 3px dotted #ffffff;
+}
+
+button {
+    margin: 0px 10px 10px 20px;
+}
+
+button:hover {
+    background-color: green;
+    cursor: pointer;
+}
+
+section {
+    margin: 25px;
+}
+
+#contact { 
+    border: 3px dotted #000000;
+}
+
+.b_info {
+    margin-left: 25px;
+}
+
+.contact {
+    margin: 10px;
+}
+
+.header {
+    margin: 0 25px 0 25px;
+    height: 300px;
+    padding-right: 25px;
+    overflow:hidden;
+}
+
+main{
+}
+
+#imgforheader {
+    width: 97%;
+    height: 200px;
+    opacity: 0.75;
+}
+
+#htitle {
+    position: absolute;
+    margin-top: -200px;
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 0px 50px 50px 50px;
+    grid-template-columns: 500px 500px 500px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.box {
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.a {
+    grid-column: 1;
+}
+
+.b {
+    grid-column: 2;  
+}
+.c {
+    grid-column: 3;
+}
+
+.boxtitle {
+    text-align: center;
+}
+.boxinfo {
+    margin-bottom: -25px;
+}
