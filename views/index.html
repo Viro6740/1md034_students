@@ -5,6 +5,12 @@
     <meta charset="utf-8"/>
     
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/js_script.js" defer></script>
+    <script src="https://vuejs.org/js/vue.js"></script>
+    <script type="text/javascript" src="js/vue_script.js" defer></script>
+    
   </head>
   <body>
     <main>
@@ -12,41 +18,10 @@
         <img id="imgforheader" class=header src="img/burgerbar.jpg" alt="BurgerOnline" title = "BurgerOnline">
       </div>
       <h1 id="htitle" class=header>Välkommen till BurgerOnline</h1>
-      <section id="burgers">        
-        <div class=wrapper>
-          <div class=boxinfo>
-        <h3 class=b_info>Välj Burgare</h3>
-        <p class=b_info>Här kan du se och välja vilken burgare du vill ha </p>
-        </div>
-          <div class="box a">
-            <h2 class=boxtitle>Eld Burgaren</h2>
-            
-            <img src="img/fireburger.png" alt="FireBurger" title = "Eld Burgaren" height = "250" width = "400">
-            <ul>
-            <li>En het burgare med 500 gram nötkött.</li>
-            <li class=diet>Innehåller gluten och laktos.</li>
-            </ul>
-          </div>
-          
-          <div class="box b">
-            <h2 class=boxtitle>Kalkon Burgaren</h2>            
-            <img src="img/turkeyburger.png" alt="TurkeyBurger" title = "Kalkon Burgaren" height = "250" width = "400">
-            <ul>
-          <li>En kalkon burgare med 500 gram kalkon.</li>
-          <li class=diet>Innehåller gluten och laktos.</li>
-          </ul>
-          </div>
-
-          <div class="box c">
-          <h2 class=boxtitle>Burgare med Flair</h2>                
-          <img src="img/candyburger.png" alt="FlairBurger" title = "Flair Burgaren" height = "250" width = "400">          
-          <ul>
-          <li>En rolig burgare med 500 gram socker.</li>
-          <li class=diet>Vegansk.</li>
-          </ul>
-          </div>
-          
-        </div>
+      
+      <section id="burgers">
+        
+        <div id="burgerMenu"> </div>
       </section>
       
       <section id="contact">        
@@ -55,23 +30,23 @@
         <form class=contact>
           <p>
             <label for="fullname">Full Name</label><br>
-            <input type="text" id="fullname" name="fn" required="required" placeholder="För- och Efternamn">
+            <input class=contactInfo type="text" id="fullname" name="fn" required="required" placeholder="För- och Efternamn">
           </p>
           <p>            
             <label for="mail">Email</label><br>
-            <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
+            <input class=contactInfo type="email" id="email" name="em" required="required" placeholder="E-mail address">
           </p>
           <p>            
             <label for="street">Gatuadress</label><br>
-            <input type="text" id="street" name="sn" required="required" placeholder="Gatunamn">
+            <input class=contactInfo type="text" id="street" name="sn" required="required" placeholder="Gatunamn">
           </p>
           <p>            
             <label for="housenumber">Hus Nummer</label><br>
-            <input type="text" id="housenumber" name="hn" required="required" placeholder="Hus Nummer"><br>
+            <input class=contactInfo type="text" id="housenumber" name="hn" required="required" placeholder="Hus Nummer"><br>
           </p>
           <p>
             <label for="payment">Betalmedel</label><br>
-            <select id="payment" name="pmnt">
+            <select class=contactInfo id="payment" name="pmnt">
               <option selected="selected">På notan</option>
               <option>Check</option>
               <option>Kreditkort</option>
@@ -80,17 +55,23 @@
             </select>
           </p>
           <p>
-            <input type="radio" name="gender" value="male"> Man<br>
-            <input type="radio" name="gender" value="female"> Kvinna<br>
-            <input type="radio" name="gender" value="other" checked="checked"> Vill ej ange
+            <input id="male" type="radio" name="gender" value="male"> Man<br>
+            <input id="female" type="radio" name="gender" value="female"> Kvinna<br>
+            <input id="other" type="radio" name="gender" value="other" checked="checked"> Vill ej ange
           </p>
-        </form>        
-        <button type="submit"><img src="https://cdn3.iconfinder.com/data/icons/food-and-drink-55/50/burger-13-2-512.png" height=20> Skicka</button>
-      </section>
-      
+        </form>
+      </section>      
+      <section id=order>          
+        <button id="myButton" v-on:click="markDone()" type="submit"><img src="https://cdn3.iconfinder.com/data/icons/food-and-drink-55/50/burger-13-2-512.png" height=20>Skicka</button>
+        <ul>
+          <li v-for="value in info"> 
+            {{ value }}
+          </li>
+        </ul>
+        </section>
     </main>
     <footer>
       <p>Matglädje AB 2018 :)</p>
-    </footer>
+    </footer>    
   </body>
 </html>

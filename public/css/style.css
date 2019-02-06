@@ -60,33 +60,10 @@ main{
     margin-top: -200px;
 }
 
-.wrapper {
+/*.wrapper {
     display: grid;
     grid-gap: 0px 50px 50px 50px;
     grid-template-columns: 500px 500px 500px;
     margin-left: 10px;
     margin-right: 10px;
-}
-
-.box {
-    border-radius: 5px;
-    padding: 20px;
-}
-
-.a {
-    grid-column: 1;
-}
-
-.b {
-    grid-column: 2;  
-}
-.c {
-    grid-column: 3;
-}
-
-.boxtitle {
-    text-align: center;
-}
-.boxinfo {
-    margin-bottom: -25px;
-}
+}*/
