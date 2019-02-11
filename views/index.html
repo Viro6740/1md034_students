@@ -3,13 +3,19 @@
   <head>
     <title>BurgerOnline</title>
     <meta charset="utf-8"/>
-    
+      
     <link rel="stylesheet" type="text/css" href="css/style.css">
     
     <script type="text/javascript" src="js/menu.js"></script>
     <script type="text/javascript" src="js/js_script.js" defer></script>
     <script src="https://vuejs.org/js/vue.js"></script>
-    <script type="text/javascript" src="js/vue_script.js" defer></script>
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/deli-very.css">
+    <script src="/vue/vue.js" defer></script>
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script src="js/deli-very.js" defer></script>
     
   </head>
   <body>
@@ -36,14 +42,6 @@
             <label for="mail">Email</label><br>
             <input class=contactInfo type="email" id="email" name="em" required="required" placeholder="E-mail address">
           </p>
-          <p>            
-            <label for="street">Gatuadress</label><br>
-            <input class=contactInfo type="text" id="street" name="sn" required="required" placeholder="Gatunamn">
-          </p>
-          <p>            
-            <label for="housenumber">Hus Nummer</label><br>
-            <input class=contactInfo type="text" id="housenumber" name="hn" required="required" placeholder="Hus Nummer"><br>
-          </p>
           <p>
             <label for="payment">Betalmedel</label><br>
             <select class=contactInfo id="payment" name="pmnt">
@@ -60,15 +58,29 @@
             <input id="other" type="radio" name="gender" value="other" checked="checked"> Vill ej ange
           </p>
         </form>
-      </section>      
-      <section id=order>          
-        <button id="myButton" v-on:click="markDone()" type="submit"><img src="https://cdn3.iconfinder.com/data/icons/food-and-drink-55/50/burger-13-2-512.png" height=20>Skicka</button>
-        <ul>
-          <li v-for="value in info"> 
-            {{ value }}
-          </li>
-        </ul>
-        </section>
+      </section>
+      
+      <section id=finalize>        
+        <h1> Click in the map! </h1>
+        <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
+        <div class="view-box">
+          <div id="dots" v-on:click="displayOrder">
+            <div 
+              v-bind:style="{ left: target.x + 'px', top: target.y + 'px'}">
+              {{key}}
+            </div>
+          </div>
+        </div>
+        
+        <div id=order>          
+          <button id="myButton" v-on:click="addOrder()" type="submit"><img src="https://cdn3.iconfinder.com/data/icons/food-and-drink-55/50/burger-13-2-512.png" height=20>Skicka</button>
+          <ul>
+            <li v-for="value in info"> 
+              {{ value }}
+            </li>
+          </ul>
+        </div>
+      </section>
     </main>
     <footer>
       <p>Matglädje AB 2018 :)</p>
