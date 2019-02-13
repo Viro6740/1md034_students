@@ -10,34 +10,33 @@ var vm = new Vue({
         orders: {},
         target: {},
         key: 'T',         
-        info: ""
+        info: {},
+        vCheck: false,
+        myOrder: {},
+        lastOrder: 0
     },
+       
     methods: {
-        getNext: function () {
-            var lastOrder = Object.keys(this.orders).reduce(function (last, next) {
-                return Math.max(last, next);
-            }, 0);
-            return lastOrder + 1;
-        },
         addOrder: function (event) {
-            var items = getContact().slice(4)
-            socket.emit("addOrder", { orderId: this.getNext(),
+            var items = getOrder();
+            var contacts = getContact();
+            this.lastOrder += 1;
+            socket.emit("addOrder", { orderId: this.lastOrder,
                                       details: { x: this.target.x,
                                                  y: this.target.y },
-                                      orderItems: items
-                            });
+                                      orderItems: items,
+                                      orderContact: contacts
+                                    });
+            this.info = getContact();
+            this.myOrder = getOrder();
+            this.vCheck = true;
+            
         },
         displayOrder: function (event) {          
             var offset = {x: event.currentTarget.getBoundingClientRect().left,
                           y: event.currentTarget.getBoundingClientRect().top};          
             this.target = { x: event.clientX - 10 - offset.x,
                             y: event.clientY - 10 - offset.y }
-        },
-        
-        markDone: function(array) {
-            console.log(getContact())            
-            this.info = getContact()
-            
-        }   
+        }
     }
                 });

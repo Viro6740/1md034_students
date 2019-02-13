@@ -73,12 +73,21 @@
         </div>
         
         <div id=order>          
-          <button id="myButton" v-on:click="addOrder()" type="submit"><img src="https://cdn3.iconfinder.com/data/icons/food-and-drink-55/50/burger-13-2-512.png" height=20>Skicka</button>
+          <button id="myButton" v-on:click="addOrder()" type="submit"><img src="https://cdn3.iconfinder.com/data/icons/food-and-drink-55/50/burger-13-2-512.png" height=20>Skicka</button>          
+          <div v-if=vCheck>
+
+            <h5>Kontaktinfo</h5>
+            <p> Namn: {{ info[0] }}<br />
+              Mejl: {{ info[1] }}<br />
+            Betalmedel: {{ info[2] }}<br />
+            Kön: {{ info[3] }} </p>
+            <h5>Order</h5>
           <ul>
-            <li v-for="value in info"> 
+            <li v-for="value in myOrder"> 
               {{ value }}
             </li>
           </ul>
+          </div>
         </div>
       </section>
     </main>

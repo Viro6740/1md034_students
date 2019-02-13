@@ -117,7 +117,12 @@ function getContact (){
         }
     }
 
+    return cArray
+}
+
+function getOrder (){
     var checkBoxes = document.getElementsByClassName("checkBoxes")
+    var cArray = [];
     for(c in checkBoxes){
         if(checkBoxes[c].checked){
             cArray.push(checkBoxes[c].name)
